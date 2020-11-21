@@ -9,10 +9,13 @@ terraform {
       # explicitness.
       source  = "hashicorp/azurerm"
       version = "~> 2.36"
-      features {}
     }
   }
   required_version = ">= 0.13"
+}
+
+provider "azurerm" {
+  features {}
 }
 
 resource "azurerm_resource_group" "example" {
