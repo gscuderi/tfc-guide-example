@@ -1,5 +1,5 @@
 provider "azure" {
-  version = "2.36.0"
+  version = "~> 2.36.0"
 
   features {}
 }
