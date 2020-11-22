@@ -22,7 +22,7 @@ resource "azurerm_resource_group" "example" {
   name     = "${var.prefix}-resources"
   location = var.location
 }
-
+/*
 resource "azurerm_storage_account" "example" {
   name                = "${var.prefix}storageacct"
   resource_group_name = azurerm_resource_group.example.name
@@ -41,7 +41,7 @@ resource "azurerm_storage_container" "example" {
   storage_account_name  = azurerm_storage_account.example.name
   container_access_type = "blob"
 }
-
+*/
 resource "azurerm_storage_account" "example2" {
   name                = "${var.prefix}storageacct2"
   resource_group_name = azurerm_resource_group.example.name
