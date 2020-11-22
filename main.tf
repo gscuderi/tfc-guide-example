@@ -21,6 +21,7 @@ provider "azurerm" {
 resource "azurerm_resource_group" "example" {
   name     = "${var.prefix}-resources"
   location = var.location
+  tags     = var.tags
 }
 
 resource "azurerm_storage_account" "example" {
@@ -34,6 +35,7 @@ resource "azurerm_storage_account" "example" {
   enable_https_traffic_only = true
   access_tier               = "Hot"
   allow_blob_public_access  = true
+  tags                      = var.tags
 }
 
 resource "azurerm_storage_container" "example" {
@@ -53,7 +55,7 @@ resource "azurerm_storage_account" "example2" {
   enable_https_traffic_only = true
   access_tier               = "Hot"
   allow_blob_public_access  = true
-  tags                      = var.tags
+  //tags                      = var.tags
 }
 
 resource "azurerm_storage_container" "example2" {
@@ -64,12 +66,6 @@ resource "azurerm_storage_container" "example2" {
 
 resource "azurerm_storage_container" "example3" {
   name                  = "${var.prefix}storagecontainer3"
-  storage_account_name  = azurerm_storage_account.example2.name
-  container_access_type = "blob"
-}
-
-resource "azurerm_storage_container" "example4" {
-  name                  = "${var.prefix}storagecontainer4"
   storage_account_name  = azurerm_storage_account.example2.name
   container_access_type = "blob"
 }
