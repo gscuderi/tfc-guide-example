@@ -65,5 +65,4 @@ resource "azurerm_storage_container" "example3" {
   name                  = "${var.prefix}storagecontainer3"
   storage_account_name  = azurerm_storage_account.example2.name
   container_access_type = "blob"
-  tags                  = var.tags
 }
