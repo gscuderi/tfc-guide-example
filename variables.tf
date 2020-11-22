@@ -6,3 +6,9 @@ variable "location" {
   description = "The Azure Region in which all resources in this example should be created."
 }
 
+variable "tags" {
+  type = map
+  default = {
+    "environment": "staging",
+  }
+}
